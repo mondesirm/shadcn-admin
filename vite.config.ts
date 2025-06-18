@@ -3,6 +3,11 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react-swc'
 import tailwindcss from '@tailwindcss/vite'
 import { TanStackRouterVite } from '@tanstack/router-plugin/vite'
+import dotenv from 'dotenv'
+
+dotenv.config()
+
+const url = (process.env.VITE_APP_URL || 'localhost').replace(/^https?:\/\//, '')
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -22,5 +27,8 @@ export default defineConfig({
       // https://github.com/tabler/tabler-icons/issues/1233
       '@tabler/icons-react': '@tabler/icons-react/dist/esm/icons/index.mjs',
     },
+  },
+  server: {
+    allowedHosts: [url, `*.${url}`],
   },
 })
