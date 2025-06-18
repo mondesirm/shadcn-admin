@@ -31,7 +31,7 @@ export const sidebarData: SidebarData = {
   },
   teams: [
     {
-      name: 'Shadcn Admin',
+      name: import.meta.env.VITE_APP_NAME || 'Shadcn Admin',
       logo: Command,
       plan: 'Vite + ShadcnUI',
     },
