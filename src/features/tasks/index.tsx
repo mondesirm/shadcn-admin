@@ -8,7 +8,7 @@ import { TasksDialogs } from './components/tasks-dialogs'
 import { TasksPrimaryButtons } from './components/tasks-primary-buttons'
 import { TasksProvider } from './components/tasks-provider'
 import { TasksTable } from './components/tasks-table'
-import { tasks } from './data/tasks'
+import { taskSeeder as tasks } from './data/seeder'
 
 export function Tasks() {
   return (
